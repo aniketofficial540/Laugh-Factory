@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Jokes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="body">
+        <h1 class="heading-body">Laugh Factory</h1>
+        <h3 class="h3-body">Your Daily Dose of Random Jokes</h3>
+        <div class="container">
+            <form action="/submit" method="POST">
+                <table>
+                    <tr>
+                        <td class="tr1">Select Category: </td>
+                        <td class="tr2">
+                            <div class="option1">
+                                <input type="radio" id="any" name="category" value="Any">
+                                <label for="any">Any</label>
+                                <input type="radio" id="customs" name="category" value="Custom">
+                                <label for="customs">Customs:- </label>
+                            </div>
+                            <div class="custom-option1" id="custom-option1">
+                                <input type="radio" id="programming" name="custom-type" value="Programming">
+                                <label for="programming">Programming</label>
+                                <input type="radio" id="misc" name="custom-type" value="Miscellaneous">
+                                <label for="misc">Misc</label>
+                                <input type="radio" id="pun" name="custom-type" value="Pun">
+                                <label for="pun">Pun</label>
+                                <input type="radio" id="spooky" name="custom-type" value="Spooky">
+                                <label for="spooky">Spooky</label>
+                                <input type="radio" id="christmas" name="custom-type" value="Christmas">
+                                <label for="christmas">Christmas</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr1">Amount of Jokes: </td>
+                        <td class="tr2">
+                            <input type="number" name="joke_amount" min="1" value="1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit">Get Joke</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div class="container2">
+                <h2 class="container-heading">Joke:- </h2>
+                <div class="Joke">
+                    <pre><%= jokes %></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("customs").addEventListener("change", function(){
+            document.getElementById("custom-option1").style.display = "block";
+        });
+        document.getElementById("any").addEventListener("change", function(){
+            document.getElementById("custom-option1").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
